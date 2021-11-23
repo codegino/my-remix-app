@@ -2,7 +2,7 @@ import { Link, LoaderFunction, useLoaderData } from "remix";
 import type { MetaFunction } from "remix";
 
 export const loader: LoaderFunction = () => {
-  return fetch("https://pokeapi.co/api/v2/pokemon");
+  return fetch("https://pokeapi.co/api/v2/pokemon").then((res) => res.json());
 };
 
 export const meta: MetaFunction = () => {
