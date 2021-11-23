@@ -1,5 +1,5 @@
 import { useLoaderData } from "remix";
-import type { LoaderFunction } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
 
 export let loader: LoaderFunction = async ({ params }) => {
   const { pokemonName } = params;
@@ -29,3 +29,10 @@ export default function Pokemon() {
     </div>
   );
 }
+
+export const meta: MetaFunction = ({ data }) => {
+  return {
+    title: `#${data.id} ${data.name}`,
+    description: `Details of ${data.name}`,
+  };
+};

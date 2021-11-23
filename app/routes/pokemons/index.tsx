@@ -1,15 +1,16 @@
 import { Link, LoaderFunction, useLoaderData } from "remix";
+import type { MetaFunction } from "remix";
 
 export const loader: LoaderFunction = () => {
   return fetch("https://pokeapi.co/api/v2/pokemon");
 };
 
-export function meta() {
+export const meta: MetaFunction = () => {
   return {
     title: "Pokemons",
     description: "List of Pokemons",
   };
-}
+};
 
 export default function Pokemons() {
   const data = useLoaderData();
