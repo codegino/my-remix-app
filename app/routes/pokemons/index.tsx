@@ -18,7 +18,7 @@ export default function Pokemons() {
     <div>
       <h2>Pokemons</h2>
       <ul>
-        {data.results.map((pokemon) => (
+        {data.results?.map((pokemon) => (
           <li key={pokemon.name}>
             <Link to={`/pokemons/${pokemon.name}`}>{pokemon.name}</Link>
           </li>
